@@ -16,7 +16,7 @@ class ResultSection extends Component {
     }
 
     componentDidMount(){
-        axios.get("http://hn.algolia.com/api/v1/search?tags=front_page").then(result => {
+        axios.get("https://hn.algolia.com/api/v1/search?tags=front_page").then(result => {
             this.setState({
                 data: result.data.hits,
                 isDataReturned: true
@@ -27,7 +27,7 @@ class ResultSection extends Component {
     }
 
     fetchData = (searchText) =>{
-        axios.get(`http://hn.algolia.com/api/v1/search?query=${searchText}&tags=story`).then(result => {
+        axios.get(`https://hn.algolia.com/api/v1/search?query=${searchText}&tags=story`).then(result => {
             this.setState({
                 data: result.data.hits,
                 isDataReturned: true
